@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 import numpy as np
-"""
-Editor de Spyder
 
-Este es un archivo temporal
-"""
 Threshold = 0.001
 Root = 2
 
-a=1
-b=4
+#Lectura del intervalo
+a=int(input('Introduce el primer valor del intervalo: '))
+b=int(input('Introduce el segundo valor del intervalo: '))
+
+#Los valores asignados son irrelevantes, pero necesitamos tener las variables iniciadas
 x1 = a
 x2 = b
 
-f = lambda x: x-2
+#Lectura de la función
+funcion = input('Introduzca la función de la que quiere hallar una raiz en el \
+intervalo anterior\nf(x) := ')
+exec('f = lambda x:' + funcion)
 
 sgnI = np.sign(f(a))
 sgnD = np.sign(f(b))
@@ -21,14 +23,13 @@ sgnD = np.sign(f(b))
 n = 0
 print(a)
 print(b)
-    
-"""
+
 #Criterio de parada 1
 
 def halt1(x,y):
     return True if abs(x-y) > Threshold else False
 
-while(halt1(x1,x2)) : 
+while(halt1(x1,x2)) :
     x2=x1
     x1 = (a+b)/2
     if(np.sign(f(x1)) == sgnI):
@@ -37,7 +38,6 @@ while(halt1(x1,x2)) :
         b = x1
     print(a)
     print(b)
-"""
 
 """
 #Criterio de parada 2
@@ -68,10 +68,10 @@ while(halt3(x1)) :
         b = x1
     print(a)
     print(b)
-    
+
 """
 
-
+"""
 #Ejercicio 4
 n = int(np.log2((b-a)/Threshold) +1)
 
@@ -83,3 +83,4 @@ for i in range(n):
         b = x1
     print(a)
     print(b)
+"""
