@@ -38,9 +38,9 @@ while(halt1(x1,x2)) :
     print(a)
     print(b)
 
-"""
-#Criterio de parada 2
 
+#Criterio de parada 2
+"""
 def halt2(x):
     return True if abs(f(x)) > Threshold else False
 
@@ -54,8 +54,9 @@ while(halt2(x1)) :
     print(b)
 """
 
-"""
+
 #Criterio de parada 3
+"""
 def halt3():
      return True if abs(x1-Root) > Threshold else False
 
@@ -70,9 +71,7 @@ while(halt3(x1)) :
 
 """
 
-<<<<<<< HEAD
 #Criterio de parada 4
-=======
 """
 #Ejercicio 4
 >>>>>>> 1b2d26677aced39bfa3032a3032e01d9c360f73a
@@ -87,16 +86,6 @@ for i in range(n):
     print(a)
     print(b)
 
+"""
 
 print(x1)
-
-
-
-
-        b = x1
-    print(a)
-    print(b)
-<<<<<<< HEAD
-=======
-"""
->>>>>>> 1b2d26677aced39bfa3032a3032e01d9c360f73a
