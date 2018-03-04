@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -*-
 import numpy as np
-"""
-Editor de Spyder
 
-Este es un archivo temporal
-"""
 Threshold = 0.001
 Root = 2
 
@@ -72,7 +67,7 @@ while(halt3(x1)) :
 """
 
 
-#Ejercicio 4
+#Criterio de parada 4
 n = int(np.log2((b-a)/Threshold) +1)
 
 for i in range(n):
@@ -80,6 +75,16 @@ for i in range(n):
     if(np.sign(f(x1)) == sgnI):
         a = x1
     else:
+	b = x1
+    print(a)
+    print(b)
+
+
+print(x1)
+
+
+
+
         b = x1
     print(a)
     print(b)
