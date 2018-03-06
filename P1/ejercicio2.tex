@@ -1,0 +1,40 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{boldline}
+\usepackage{amssymb, amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{soul}
+
+% Meta
+\title{Título}
+\author{Pedro Bonilla Nadal}
+\date{\today}
+
+% Custom
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\setlength\parindent{0pt}
+\definecolor{Light}{gray}{.90}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\begin{document}
+\maketitle
+	2. \textbf{Ejemplos.} Busca tres ecuaciones no lineales diferentes $f (x) = 0$, verificando $ |f'(x^* )| \simeq 1$ , $ |f'(x^*)| >> 1$ , $ |f'(x^* )| << 1,$ respectivamente, de las que puedas obtener una solución exacta y un intervalo para cada una de ellas que contenga una única solución. Aproxima la misma en cada caso con el método de bisección fijando un error máximo y analiza la diferencia entre el número de iteraciones realizadas con cada una de las variantes \emph{a), b), c)} y \emph{d) }del método.\\
+
+\emph{Solución.}
+\begin{itemize}
+	\item $f_1(x) = e^x-1 \implies f_1(0) = 0,\ f_1'(0)=1\ \simeq 1$
+	\item $f_2(x) = e^x-e \implies f_2(1) = 0,\ f_2'(1)=e\ >> 1$
+	\item $f_3(x) = ln(x)-1 \implies f_3(e) = 0,\ f_3'(e)=\frac{1}{e}\ << 1$
+\end{itemize}
+
+	
+
+\end{document}
