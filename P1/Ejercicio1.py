@@ -16,6 +16,7 @@ funcion = input('Introduzca la función de la que quiere hallar una raiz en el \
 intervalo anterior\nf(x) := ')
 exec('f = lambda x:' + funcion)
 
+#Signo de los extremos del intervalo
 sgnI = np.sign(f(a))
 sgnD = np.sign(f(b))
 
@@ -24,17 +25,20 @@ print(a)
 print(b)
 
 #Criterio de parada 1
-
 def halt1(x,y):
     return True if abs(x-y) > Threshold else False
+
 
 while(halt1(x1,x2)) :
     x2=x1
     x1 = (a+b)/2
+
+    #Reducimos el intervalo a la mitad
     if(np.sign(f(x1)) == sgnI):
         a = x1
     else:
         b = x1
+        
     print(a)
     print(b)
 
@@ -46,10 +50,13 @@ def halt2(x):
 
 while(halt2(x1)) :
     x1 = (a+b)/2
+
+    #Reducimos el intervalo a la mitad
     if(np.sign(f(x1)) == sgnI):
         a = x1
     else:
         b = x1
+
     print(a)
     print(b)
 """
@@ -62,10 +69,13 @@ def halt3():
 
 while(halt3(x1)) :
     x1 = (a+b)/2
+
+    #Reducimos el intervalo a la mitad
     if(np.sign(f(x1)) == sgnI):
         a = x1
     else:
         b = x1
+
     print(a)
     print(b)
 
@@ -73,19 +83,21 @@ while(halt3(x1)) :
 
 #Criterio de parada 4
 """
-#Ejercicio 4
->>>>>>> 1b2d26677aced39bfa3032a3032e01d9c360f73a
 n = int(np.log2((b-a)/Threshold) +1)
 
 for i in range(n):
     x1 = (a+b)/2
+
+    #Reducimos el intervalo a la mitad
     if(np.sign(f(x1)) == sgnI):
         a = x1
     else:
 	b = x1
+
     print(a)
     print(b)
 
 """
 
+#Imprimimos la aproximación final
 print(x1)
