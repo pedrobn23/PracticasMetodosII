@@ -10,6 +10,9 @@
 		Johanna Capote Robayna\\
 		Guillermo Galindo Ortuño}
 \date{}
+
+%No indent
+\setlength\parindent{0pt}
 \begin{document}
 
 \maketitle
@@ -17,7 +20,27 @@
 \textbf{Ejercicio 1}
 Demuestra que la ecuaci\'on $ x^3 + 4x^2 = 10 $ tiene una unica soluci\'on en el intervalo $ [1,2] $. Aproxima dicha ra\'iz con el m\'etodo de bisecci\'on con un error menor que $10^{-5}$. ¿Cu\'antas iteraciones ser\'an necesarias para conseguir un error menor que $10^{-8}$?
 \\
+
+\textbf{Solución.}
+
+Para demostrar la existencia de esa solución nos basta con utilizar el teorema de Bolzano, ya que, como la funcion $f(x)=x^3 +4x^2 -10$ es continua de manera evidente, y $f(1) = -5$ y $f(2) =  14,$, entonces existe un $c$ en el intervalo $(1,2)$ tal que $f(c) = 0$.
+
+Ahora, para demostrar la unicidad estudiaremos la derivada de dicha función(es derivable en todo 
+ R). Tenemos que $f'(x) = 3x^2 +8x$, por tanto, es evidente que esa funcion no se anula en el intervalo $(1,2)$, luego $f(x)$ es estrictamente monótona en ese intervalo y solamente puede tener una raiz.
 \\
+
+Ahora, utilizando el programa para calcular la aproximación obtenida por el método de bisección que hemos diseñado tenemos que la raiz es: $1.36522674$.
+\\
+
+Supuesto que $x^*$ es la raiz buscada, que $x_n$ es la aproximación n-ésima, y que $\epsilon$ es el error máximo aceptable sabemos que:
+$$|x_n - x^*| < \frac{b-a}{2^{n+1}}$$
+Por tanto, despejando $n$ de 
+$$\frac{b-a}{2^{n+1}} = \epsilon$$
+nos aseguramos que el error sea el deseado. Así, tras operar un poco, es suficiente con:
+$$ n \geq log_2(\frac{b-a}{\epsilon})-1$$
+Sustituyendo en nuestro caso particular tenemos que es suficiente con $n \geq 15$
+\\ \\
+
 \textbf{Ejercicio 7}
 Se considera la ecuaci\'on $x + \log x = 0$
 \begin{itemize}

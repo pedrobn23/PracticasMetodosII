@@ -1,6 +1,6 @@
 import numpy as np
 
-Threshold = 0.001
+Threshold = pow(10,-5)
 Root = 2
 
 #Lectura del intervalo
@@ -25,9 +25,9 @@ print(a)
 print(b)
 
 #Criterio de parada 1
+"""
 def halt1(x,y):
     return True if abs(x-y) > Threshold else False
-
 
 while(halt1(x1,x2)) :
     x2=x1
@@ -38,11 +38,9 @@ while(halt1(x1,x2)) :
         a = x1
     else:
         b = x1
-        
-    print(a)
-    print(b)
 
-
+    print(x1)
+"""
 #Criterio de parada 2
 """
 def halt2(x):
@@ -57,10 +55,8 @@ while(halt2(x1)) :
     else:
         b = x1
 
-    print(a)
-    print(b)
+    print(x1)
 """
-
 
 #Criterio de parada 3
 """
@@ -76,15 +72,13 @@ while(halt3(x1)) :
     else:
         b = x1
 
-    print(a)
-    print(b)
+    print(x1)
 
 """
 
 #Criterio de parada 4
-"""
-n = int(np.log2((b-a)/Threshold) +1)
-
+n = int(np.log2((b-a)/Threshold)-1)
+print(n)
 for i in range(n):
     x1 = (a+b)/2
 
@@ -92,12 +86,9 @@ for i in range(n):
     if(np.sign(f(x1)) == sgnI):
         a = x1
     else:
-	b = x1
+        b = x1
 
-    print(a)
-    print(b)
-
-"""
+    print(x1)
 
 #Imprimimos la aproximación final
 print(x1)
