@@ -43,6 +43,8 @@ while(halt1(x1,x2)) :
 
 print(x1)
 
+
+"""
 #Criterio de parada 2
  print ("Criterio 2:")
 def halt2(x):
@@ -95,3 +97,4 @@ for i in range(n):
 
 #Imprimimos la aproximación final
 print(x1)
+"""
