@@ -25,7 +25,7 @@ Demuestra que la ecuaci\'on $x^3 + 4x^2 = 10 $ tiene una \'unica soluci\'on en e
 
 Para demostrar la existencia de esa solución nos basta con utilizar el teorema de Bolzano, ya que, como la funcion $f(x)=x^3 +4x^2 -10$ es continua de manera evidente, y $f(1) = -5$ y $f(2) =  14,$, entonces existe un $c$ en el intervalo $(1,2)$ tal que $f(c) = 0$.
 
-Ahora, para demostrar la unicidad estudiaremos la derivada de dicha función(es derivable en todo 
+Ahora, para demostrar la unicidad estudiaremos la derivada de dicha función(es derivable en todo
  R). Tenemos que $f'(x) = 3x^2 +8x$, por tanto, es evidente que esa funcion no se anula en el intervalo $(1,2)$, luego $f(x)$ es estrictamente monótona en ese intervalo y solamente puede tener una raiz.
 \\
 
@@ -34,7 +34,7 @@ Ahora, utilizando el programa para calcular la aproximación obtenida por el mé
 
 Supuesto que $x^*$ es la raiz buscada, que $x_n$ es la aproximación n-ésima, y que $\epsilon$ es el error máximo aceptable sabemos que:
 $$|x_n - x^*| < \frac{b-a}{2^{n+1}}$$
-Por tanto, despejando $n$ de 
+Por tanto, despejando $n$ de
 $$\frac{b-a}{2^{n+1}} = \epsilon$$
 nos aseguramos que el error sea el deseado. Así, tras operar un poco, es suficiente con:
 $$ n \geq log_2(\frac{b-a}{\epsilon})-1$$
@@ -55,4 +55,37 @@ $$\begin{cases}
 xy - y + \frac{1}{9} &= \ 0\\
 \end{cases}$$
 tiene una unica soluci\'on en el intervalo $[0, 0.4]x[0, 0.4]$. Calcula una aproximaci\'on de la soluci\'on en el intervalo anterior mediante 4 iteraciones del m\'etodo de Newton partiendo de (0,0).
+\\
+
+\textbf{Solución.}
+
+Para demostrar que existe una única solución utilizaremos el teorema de
+convergencia global. Para ello, transformaremos nuestro sistema en una ecuacion
+de punto fijo, definida en un conjunto cerrado y acotado, que en nuestro caso
+es $D = [0,0.4]\times[0,0.4]$
+
+$$\begin{cases}
+\frac{x^2y^2}{2} - x + \frac{7}{24} &= \ 0 \\
+xy - y + \frac{1}{9} &= \ 0\\
+\end{cases} \longrightarrow g(x,y) = (\frac{x^2y^2}{2} + \frac{7}{24}, xy +
+\frac{1}{9} $$
+
+Una vez realiza esta transformación, necesitaremos varias condiciones para poder
+aplicar el teorema.
+\begin{itemize}
+        \item g(x) \in D \forall x \in D\\
+        Cada componente de $g$ es positiva, por lo que ambas son superiores que
+        $0$ siempre. Ahora, es evidente que ambas alcanzan su máximo en el punto
+        $0.4$, con $g_1(0,4) = 0.304...$ y $g_2(0.4) = 0.27$, luego la condicion
+        se cumple.
+        \item g es contractiva\\
+        Para demostrar que $g$ es contractiva utilizaremos un resultado de clase
+        que afirma que si D es cerrado, acotado y convexo(en nuestro lo es) y
+        $g:D \rightarrow \mathbb{R}^n$ es de clase 1 y existe un L tal que
+        $||Jg(x)|| < L$ para todo $x$ en D, entonces g es contractiva.\\
+        Podriamos utilizar cualquier norma, pero por comodidad utilizaremos la
+        norma del máximo.
+        $$Jg(x) =
+        $$
+\end{itemize}
 \end{document}
