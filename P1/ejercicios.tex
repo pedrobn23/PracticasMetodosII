@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage{mathtools}
+\usepackage{dsfont}
 
 %Gummi|065|=)
 \title{\textbf{Práctica 1}}
@@ -17,7 +18,7 @@
 
 \maketitle
 
-\textbf{Ejercicio 1}
+\textbf{Ejercicio 1.}
 Demuestra que la ecuaci\'on $x^3 + 4x^2 = 10 $ tiene una \'unica soluci\'on en el intervalo $ [1,2] $. Aproxima dicha ra\'iz con el m\'etodo de bisecci\'on con un error menor que $10^{-5}$. ¿Cu\'antas iteraciones ser\'an necesarias para conseguir un error menor que $10^{-8}$?
 \\
 
@@ -41,14 +42,14 @@ $$ n \geq log_2(\frac{b-a}{\epsilon})-1$$
 Sustituyendo en nuestro caso particular tenemos que es suficiente con $n \geq 15$
 \\ \\
 
-\textbf{Ejercicio 7}
+\textbf{Ejercicio 7.}
 Se considera la ecuaci\'on $x + \log x = 0$
 \begin{itemize}
 \item[a)]Prueba que dicha ecuaci\'on posee una \'unica soluci\'on.
 \item[b)] Sea $a \in (0, \frac{1}{2})$. Prueba que  si $x_0 \in [a,1]$ en m\'etodo de Newton-Raphson es convergente.
 
 \end{itemize}
-\textbf{Ejercicio 16}
+\textbf{Ejercicio 16.}
 Demuestra que el sistema de ecuaciones
 $$\begin{cases}
 \frac{x^2y^2}{2} - x + \frac{7}{24} &= \ 0 \\
@@ -73,7 +74,7 @@ xy - y + \frac{1}{9} &= \ 0\\
 Una vez realiza esta transformación, necesitaremos varias condiciones para poder
 aplicar el teorema.
 \begin{itemize}
-        \item g(x) \in D \forall x \in D\\
+        \item $g(x) \in D \forall x \in D$\\
         Cada componente de $g$ es positiva, por lo que ambas son superiores que
         $0$ siempre. Ahora, es evidente que ambas alcanzan su máximo en el punto
         $0.4$, con $g_1(0,4) = 0.304...$ y $g_2(0.4) = 0.27$, luego la condicion
@@ -81,11 +82,15 @@ aplicar el teorema.
         \item g es contractiva\\
         Para demostrar que $g$ es contractiva utilizaremos un resultado de clase
         que afirma que si D es cerrado, acotado y convexo(en nuestro lo es) y
-        $g:D \rightarrow \mathbb{R}^n$ es de clase 1 y existe un L tal que
-        $||Jg(x)|| < L$ para todo $x$ en D, entonces g es contractiva.\\
+        $g:D \rightarrow \mathds{R}$ es de clase 1 y existe un L tal que
+        $||Jg(x)|| \leq L < 1$ para todo $x$ en D, entonces g es contractiva.\\
         Podriamos utilizar cualquier norma, pero por comodidad utilizaremos la
         norma del máximo.
-        $$Jg(x) =
-        $$
+        $$Jg(x) =\begin{pmatrix}
+ y^2x & x^2y    \\
+ y    & x       \\
+\end{pmatrix}        $$
+
+Y en nuestro intervalo $||Jg(x)|| \leq 0.8 <1$ por lo que es contractiva y por lo tanto tiene solución única.
 \end{itemize}
 \end{document}
