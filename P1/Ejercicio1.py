@@ -1,3 +1,12 @@
+#Algoritmo de bisección
+#Realizadores:
+#Pedro Bonilla, Johanna Capote y Guillermo Galindo
+#Ejecucion:
+#$ python3.5 Ejercicio1.py
+
+#IMPORTANTE: para ejecutar este programa se requiere tener instalado "numpy"
+#en su defecto, se puede sustituir por funciones de la libreria math
+
 import numpy as np
 
 Threshold = pow(10,-5)
