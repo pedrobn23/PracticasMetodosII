@@ -1,3 +1,10 @@
+#Algoritmo de bisección
+#Realizadores:
+#Pedro Bonilla, Johanna Capote y Guillermo Galindo
+#Ejecucion:
+#$ python3 Ejercicio1.py
+
+
 import numpy as np
 
 Threshold = pow(10,-5)
@@ -44,7 +51,7 @@ while(halt1(x1,x2)) :
 print(x1)
 
 #Criterio de parada 2
- print ("Criterio 2:")
+print ("Criterio 2:")
 def halt2(x):
     return True if abs(f(x)) > Threshold else False
 
@@ -61,7 +68,7 @@ while(halt2(x1)) :
  
 
 #Criterio de parada 3
- print ("Criterio 3:")
+print ("Criterio 3:")
 def halt3():
      return True if abs(x1-Root) > Threshold else False
 
