@@ -5,8 +5,8 @@ Root = 0
 counter = 0
 
 #Lectura del intervalo
-a=int(input('Introduce el primer valor del intervalo: '))
-b=int(input('Introduce el segundo valor del intervalo: '))
+a=float(input('Introduce el primer valor del intervalo: '))
+b=float(input('Introduce el segundo valor del intervalo: '))
 
 #Los valores asignados son irrelevantes, pero necesitamos tener las variables iniciadas
 x1 = a
