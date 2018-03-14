@@ -1,4 +1,4 @@
-#Algoritmo de bisección
+#Algoritmo de biseccion
 #Realizadores:
 #Pedro Bonilla, Johanna Capote y Guillermo Galindo
 #Ejecucion:
@@ -21,8 +21,8 @@ b=float(input('Introduce el segundo valor del intervalo: '))
 x1 = a
 x2 = b
 
-#Lectura de la función
-funcion = input('Introduzca la función de la que quiere hallar una raiz en el \
+#Lectura de la funcion
+funcion = input('Introduzca la funcion de la que quiere hallar una raiz en el \
 intervalo anterior\nf(x) := ')
 exec('f = lambda x:' + funcion)
 
@@ -50,9 +50,9 @@ while(halt1(x1,x2)) :
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
     #print(x1)
 
-#Imprimimos la aproximación final
+#Imprimimos la aproximacion final
 print(x1)
-"""
+
 #Criterio de parada 2
 print ("Criterio 2:")
 def halt2(x):
@@ -69,10 +69,9 @@ while(halt2(x1)) :
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
     print(x1)
 
-#Imprimimos la aproximación final
+#Imprimimos la aproximacion final
 print(x1)
-"""
-"""
+
 #Criterio de parada 3
 Root=float(input('Introduce una raiz: '))
 
@@ -91,10 +90,9 @@ while(halt3(x1)) :
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
     print(x1)
 
-#Imprimimos la aproximación final
+#Imprimimos la aproximacion final
 print(x1)
-"""
-"""
+
 #Criterio de parada 4
 print ("Criterio 4:")
 n = int(np.log2((b-a)/Threshold)-1)
@@ -110,6 +108,5 @@ for i in range(n):
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
     print(x1)
 
-#Imprimimos la aproximación final
+#Imprimimos la aproximacion final
 print(x1)
-"""
