@@ -31,11 +31,9 @@ sgnI = np.sign(f(a))
 sgnD = np.sign(f(b))
 
 n = 0
-print(a)
-print(b)
 
 #Criterio de parada 1
-"""
+
 print ("Criterio 1:")
 def halt1(x,y):
     return True if abs(x-y) > Threshold else False
@@ -55,9 +53,7 @@ while(halt1(x1,x2)) :
 #Imprimimos la aproximación final
 print(x1)
 """
-
 #Criterio de parada 2
-"""
 print ("Criterio 2:")
 def halt2(x):
     return True if abs(f(x)) > Threshold else False
@@ -71,10 +67,11 @@ while(halt2(x1)) :
     else:
         b = x1
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
-    #print(x1)
+    print(x1)
 
 #Imprimimos la aproximación final
 print(x1)
+"""
 """
 #Criterio de parada 3
 Root=float(input('Introduce una raiz: '))
@@ -97,6 +94,7 @@ while(halt3(x1)) :
 #Imprimimos la aproximación final
 print(x1)
 """
+"""
 #Criterio de parada 4
 print ("Criterio 4:")
 n = int(np.log2((b-a)/Threshold)-1)
@@ -110,7 +108,7 @@ for i in range(n):
     else:
         b = x1
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
-    #print(x1)
+    print(x1)
 
 #Imprimimos la aproximación final
 print(x1)
