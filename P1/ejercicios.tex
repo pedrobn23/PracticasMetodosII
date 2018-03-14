@@ -4,8 +4,8 @@
 \usepackage[spanish, es-tabla]{babel}
 \usepackage{mathtools}
 \usepackage{amssymb}
-\usepackage{amsthm} 
-    
+\usepackage{amsthm}
+
 \usepackage{dsfont}
 
 %Gummi|065|=)
@@ -42,9 +42,9 @@ Por tanto, despejando $n$ de
 $$\frac{b-a}{2^{n+1}} = \epsilon$$
 nos aseguramos que el error sea el deseado. Así, tras operar un poco, es suficiente con:
 $$ n \geq log_2(\frac{b-a}{\epsilon})-1$$
-Sustituyendo en nuestro caso particular tenemos que es suficiente con $n \geq 15$
+En nuestro caso particular tenemos:
+$$n \geq log_2(\frac{2-1}{10^{-8}})-1 \implies n \geq 26$$
 \\ \\
-
 
 \textbf{Ejercicio 7.}
 Se considera la ecuaci\'on $x + \log x = 0$
