@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{boldline}
+\usepackage{amssymb, amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{soul}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+% Meta
+\title{Título}
+\author{Pedro Bonilla Nadal}
+\date{\today}
+
+% Custom
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\setlength\parindent{0pt}
+\definecolor{Light}{gray}{.90}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\begin{document}
+
+\maketitle
+
+\section{Ejemplos.} Busca tres ecuaciones no lineales diferentes $f (x) = 0$, verificando $ |f'(x^* )| \simeq 1$ , $ |f'(x^*)| >> 1$ , $ |f'(x^* )| << 1,$ respectivamente, de las que puedas obtener una solución exacta y un intervalo para cada una de ellas que contenga una única solución. Aproxima la misma en cada caso con el método de bisección fijando un error máximo y analiza la diferencia entre el número de iteraciones realizadas con cada una de las variantes \emph{a), b), c)} y \emph{d) }del método.\\
+
+\emph{Solución.}
+\begin{itemize}
+\item $f_1(x) = e^x-1 \implies f_1(0) = 0,\ f_1'(0)=1\ \simeq 1$
+\begin{verbatim}
+ Introduce el primer valor del intervalo: -1
+ Introduce el segundo valor del intervalo: 2
+ Introduzca la funcion de la que quiere hallar una raiz en 
+ el intervalo anterior:
+ f(x) := np.exp(x)-1
+ 
+ Criterio 1:
+ 0.5
+ -0.25
+ 0.125
+ -0.0625
+ 0.03125
+ -0.015625
+ 0.0078125
+ -0.00390625
+ 0.001953125
+ -0.0009765625
+ 0.00048828125
+ -0.000244140625
+ 0.0001220703125
+ -6.103515625e-05
+ 3.0517578125e-05
+ -1.52587890625e-05
+ 7.62939453125e-06
+ -3.814697265625e-06
+ 1.9073486328125e-06
+ 1.9073486328125e-06
+ 
+ Criterio 2:
+ 0.5
+ -0.25
+ 0.125
+ -0.0625
+ 0.03125
+ -0.015625
+ 0.0078125
+ -0.00390625
+ 0.001953125
+ -0.0009765625
+ 0.00048828125
+ -0.000244140625
+ 0.0001220703125
+ -6.103515625e-05
+ 3.0517578125e-05
+ -1.52587890625e-05
+ 7.62939453125e-06
+ 7.62939453125e-06
+ 
+ Criterio 3:
+ 0.5
+ -0.25
+ 0.125
+ -0.0625
+ 0.03125
+ -0.015625
+ 0.0078125
+ -0.00390625
+ 0.001953125
+ -0.0009765625
+ 0.00048828125
+ -0.000244140625
+ 0.0001220703125
+ -6.103515625e-05
+ 3.0517578125e-05
+ -1.52587890625e-05
+ 7.62939453125e-06
+ 7.62939453125e-06
+ 
+ Criterio 4:
+ 17
+ 0.5
+ -0.25
+ 0.125
+ -0.0625
+ 0.03125
+ -0.015625
+ 0.0078125
+ -0.00390625
+ 0.001953125
+ -0.0009765625
+ 0.00048828125
+ -0.000244140625
+ 0.0001220703125
+ -6.103515625e-05
+ 3.0517578125e-05
+ -1.52587890625e-05
+ 7.62939453125e-06
+ 7.62939453125e-06
+
+  \end{verbatim}
+  
+\item $f_2(x) = e^x-e \implies f_2(1) = 0,\ f_2'(1)=e\ >> 1$
+\item $f_3(x) = ln(x)-1 \implies f_3(e) = 0,\ f_3'(e)=\frac{1}{e}\ << 1$
+\end{itemize}
+
+\newpage
+
+
+\section{Anexo-Código.}
+
+\lstinputlisting[language=Python]{Ejercicio1.py}
+
+
+\end{document}
