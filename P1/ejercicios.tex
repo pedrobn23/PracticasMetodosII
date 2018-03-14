@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[spanish, es-tabla]{babel}
+\usepackage[spanish, es-tabla, es-nodecimaldot]{babel}
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -54,17 +54,19 @@ Se considera la ecuaci\'on $x + \log x = 0$
 \item[b)] Sea $a \in (0, \frac{1}{2})$. Prueba que  si $x_0 \in [a,1]$ en m\'etodo de Newton-Raphson es convergente.
 \end{itemize}
 
-\textbf{Soluci\'on.}
+\textbf{Soluci\'on.} \\
+El dominio de nuestra funci\'on es: $\mathbb{R}^+$
 \begin{itemize}
 \item[\textbf{a)}]
-Primero vamos a probar la unicidad:
-$$f'(x) = 1 + \frac{1}{x} > 0 ,\ \forall x \in \mathbb{R} $$
-Vemos que es inyectiva por lo tanto la funci\'on a cada $x$ solo le asigna un \'unico valor. \\
-Veamos su existencia por Bolzano:
+Primero vemos que es \'unica:
+$$f'(x) = 1 + \frac{1}{x} > 0 ,\ \forall x \in \mathbb{R}^+ $$
+La funci\'on es creciente en todo su dominio, por lo tanto, en caso de existir una ra\'iz, esta es \'unica. \\ 
+Ahora vamos a probar su existencia por Bolzano:
 
-$$f(\frac{1}{10}) = \frac{1}{10} - 2,302585093 = - 2,202585093 < 0$$
-$$f(e) = 2 > 0$$
-Por el teorema de Bolzano sabemos que $\exists x \in \mathbb{R} : f(x) = 0$
+$$f(\frac{1}{e}) = \frac{1}{e} - 1 = -0,632120559< 0$$
+$$f(e) = 1 + e > 0$$
+Por el teorema de Bolzano sabemos que $\exists x_0 \in \mathbb{R} : f(x_0) = 0$
+
 \item[\textbf{b)}]
 Para probrar que $f(x) = x + \ln x$ es convergente tenemos que desmotrar que:
 \begin{itemize}
@@ -76,6 +78,8 @@ Para probrar que $f(x) = x + \ln x$ es convergente tenemos que desmotrar que:
 \begin{itemize}
 \item[\textbf{i)}]
 $$f(a) \cdot f(1) = f(a) \cdot 1 = f(a) $$
+
+Como nuestra funci\'on es creciente, y $f(\frac{1}{2}) < 0$ se cumple que:
 $$f(a) = a + \ln a < 0 , \  \forall a \in (0, \frac{1}{2}) $$
 \item[\textbf{ii)}]
 $$f'(x) = 1 + \frac{1}{x} $$
@@ -92,7 +96,7 @@ $$\begin{cases}
 \frac{x^2y^2}{2} - x + \frac{7}{24} &= \ 0 \\
 xy - y + \frac{1}{9} &= \ 0\\
 \end{cases}$$
-tiene una unica soluci\'on en el intervalo $[0, 0.4]x[0, 0.4]$. Calcula una aproximaci\'on de la soluci\'on en el intervalo anterior mediante 4 iteraciones del m\'etodo de Newton partiendo de (0,0).
+tiene una unica soluci\'on en el intervalo $[0, 0.4]\times[0, 0.4]$. Calcula una aproximaci\'on de la soluci\'on en el intervalo anterior mediante 4 iteraciones del m\'etodo de Newton partiendo de (0,0).
 \\
 
 \textbf{Solución.}
@@ -106,26 +110,23 @@ $$\begin{cases}
 \frac{x^2y^2}{2} - x + \frac{7}{24} &= \ 0 \\
 xy - y + \frac{1}{9} &= \ 0\\
 \end{cases} \longrightarrow g(x,y) = (\frac{x^2y^2}{2} + \frac{7}{24}, xy +
-\frac{1}{9} $$
+\frac{1}{9} )$$
 
 Una vez realiza esta transformación, necesitaremos varias condiciones para poder
 aplicar el teorema.
 \begin{itemize}
-        \item $g(x) \in D \forall x \in D$\\
+        \item $g(x) \in D ,\  \forall x \in D$\\
         Cada componente de $g$ es positiva, por lo que ambas son superiores que
         $0$ siempre. Ahora, es evidente que ambas alcanzan su máximo en el punto
-        $0.4$, con $g_1(0,4) = 0.304...$ y $g_2(0.4) = 0.27$, luego la condicion
+        $(0.4, 0.4)$, con $g_1(0,4) = 0.304...$ y $g_2(0.4) = 0.27$, luego la condicion
         se cumple.
         \item g es contractiva\\
         Para demostrar que $g$ es contractiva utilizaremos un resultado de clase
         que afirma que si D es cerrado, acotado y convexo(en nuestro lo es) y
-<<<<<<< HEAD
-        $g:D \rightarrow  \mathbb{R}^n $ es de clase 1 y existe un L tal que
-        $||Jg(x)|| < L$ para todo $x$ en D, entonces g es contractiva.\\
-=======
+
         $g:D \rightarrow \mathds{R}$ es de clase 1 y existe un L tal que
         $||Jg(x)|| \leq L < 1$ para todo $x$ en D, entonces g es contractiva.\\
->>>>>>> 1b4442b6b68eaad763cb546f76d982f2bb0abf03
+
         Podriamos utilizar cualquier norma, pero por comodidad utilizaremos la
         norma del máximo.
         $$Jg(x) =\begin{pmatrix}
