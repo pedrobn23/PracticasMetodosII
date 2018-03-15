@@ -36,12 +36,13 @@ sgnD = np.sign(f(b))
 n = 0
 
 #Criterio de parada 1
-
+n_iter=0
 print ("Criterio 1:")
 def halt1(x,y):
     return True if abs(x-y) > Threshold else False
 
 while(halt1(x1,x2)) :
+    n_iter+=1
     x2=x1
     x1 = (a+b)/2
 
@@ -51,7 +52,7 @@ while(halt1(x1,x2)) :
     else:
         b = x1
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
-    print(x1)
+    print(n_iter,"-",x1)
 
 #Imprimimos la aproximacion final
 print(x1)
@@ -59,12 +60,15 @@ print(x1)
 a=a_init
 b=b_init
 x1 = a
+
 #Criterio de parada 2
+n_iter=0
 print ("Criterio 2:")
 def halt2(x):
     return True if abs(f(x)) > Threshold else False
 
 while(halt2(x1)) :
+    n_iter+=1
     x1 = (a+b)/2
 
     #Reducimos el intervalo a la mitad
@@ -74,17 +78,17 @@ while(halt2(x1)) :
         b = x1
 
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
-    print(x1)
+    print(n_iter,"-",x1)
 
 #Imprimimos la aproximacion final
 print(x1)
 
-
-
 a=a_init
 b=b_init
 x1 = a
+
 #Criterio de parada 3
+n_iter=0
 Root=float(input('Introduce una raiz: '))
 
 print ("Criterio 3:")
@@ -92,6 +96,7 @@ def halt3(x):
      return True if abs(x-Root) > Threshold else False
 
 while(halt3(x1)) :
+    n_iter+=1
     x1 = (a+b)/2
 
     #Reducimos el intervalo a la mitad
@@ -101,20 +106,22 @@ while(halt3(x1)) :
         b = x1
 
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
-    print(x1)
+    print(n_iter,"-",x1)
 
 #Imprimimos la aproximacion final
 print(x1)
 
-
 a=a_init
 b=b_init
 x1 = a
+
 #Criterio de parada 4
+n_iter=0
 print ("Criterio 4:")
 n = int(np.log2((b-a)/Threshold)-1)
 print(n)
 for i in range(n):
+    n_iter+=1
     x1 = (a+b)/2
 
     #Reducimos el intervalo a la mitad
@@ -122,9 +129,9 @@ for i in range(n):
         a = x1
     else:
         b = x1
-        
+
     #Descomentar la linea de abajo para mostrarlo en cada iteracion
-    print(x1)
+    print(n_iter,"-",x1)
 
 #Imprimimos la aproximacion final
 print(x1)
