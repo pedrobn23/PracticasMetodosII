@@ -48,8 +48,8 @@ b=2
 n=10
 
 resultado = romberg( f, a, b, n )
-print('Resultado increible')
-print(resultado)
+print("\nEl valor aproximado es:",resultado)
+
 
      
      

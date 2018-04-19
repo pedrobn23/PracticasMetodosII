@@ -20,14 +20,13 @@ def intTrapecio( f, a, b, n ):
 # funcion = input('Introduzca la funcion de la que quiere hallar una raiz en el \
 # intervalo anterior\nf(x) := ')
 # exec('f = lambda x:' + funcion)
-# a=('Introduce extremo izquierdo del intervalo := ')
-# a=('Introduce extremo derecho del intervalo := ')
+# a=input('Introduce extremo izquierdo del intervalo := ')
+# b=input('Introduce extremo derecho del intervalo := ')
 
-f = lambda x: np.log(x)
+
 a=1
 b=2
 n=200
 
 resultado = intTrapecio( f, a, b, n )
-print('Resultado increible')
-print(resultado)
+print("\nEl valor aproximado es:",resultado)
