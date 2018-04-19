@@ -17,8 +17,7 @@ def intTrapecio( f, a, b, n ):
 def ampliaIntegral( f, a, b, Rk, k):
      index = 2**(k)
      h = (b-a)/(index * 2)
-     resultado=0
-     resultado= Rk/2 + ( sum( [f(a +(2*i+1)*h) for i in range(index)] ) )
+     resultado= Rk/2 + ( sum( [f(a +(2*i+1)*h) for i in range( int(index/2))] ) )
 
      return resultado
 
@@ -32,9 +31,9 @@ def romberg(f, a, b, n):
      R.append( intTrapecio( f, a, b, 0 ) )
      for i in range(n):
           R.append( intTrapecio( f, a, b, 2**n ) )
-
-     #TODO: ampiaIntegral no funciona, revisar.
      #R.append( ampliaIntegral( f, a, b, R[i], i ) )
+     #TODO: ampiaIntegral no funciona, revisar.
+     
 
      for i in range(n):
           for j in range(n-i):
