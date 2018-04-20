@@ -22,6 +22,7 @@
 \maketitle
 
 \textbf{Ejercicio 5.} Calcula el orden de precisión con respecto a $h$ de las siguiente fórmulas para la aproximación numérica de $f'(c)$: \\ \\
+
 \textbf{a)} $f'(c) \simeq \frac{1}{6h}(-11f(c) + 18f(c + h) -9f(c + 2h) +2f(c+3h))$ \\ \\
 \textbf{solución} \\
 \underline{orden 1:} \\
@@ -60,18 +61,26 @@ una fórmula de Newton-Cotes. Demuestra que:
 Además, podemos escribir los $x_i$ como $x_i= x_{n/2} + h(i-n/2)$, entonces:   $$x_{n/2-i}  = x_{n/2} + h(n/2-i-n/2)   = x_{n/2} - hi $$ 
 $$x_{n/2+i} = x_{n/2} + h(n/2+i-n/2) = x_ {n/2} + hi $$
 
-Veamos primero que :
-$$ \prod_{j = 0  \ j\neq (n/2-i)}^n (x_{n/2} - hi -x_j) =  \prod_{j = 0  \ j\neq (n/2-i)}^n   (x_{n/2} - hi -   (x_{n/2} + h(j-n/2) )) = $$ $$  \prod_{j = 0  \ j\neq (n/2-i)}^n   (- hi -    h(j-n/2) ) =
-  \prod_{j = 0  \ j\neq (n/2-i)}^n    ( h (-i - j+n/2) ) $$
+%Veamos primero que :
+%$$ \prod_{j = 0  \ j\neq (n/2-i)}^n (x_{n/2} - hi -x_j) =  \prod_{j = 0  \ j\neq (n/2-i)}^n   (x_{n/2} - hi -   (x_{n/2} + h(j-n/2) )) = $$ $$  \prod_{j = 0  \ j\neq (n/2-i)}^n   (- hi -    h(j-n/2) ) =
+ % \prod_{j = 0  \ j\neq (n/2-i)}^n    ( h (-i - j+n/2) ) = h^n$$
 
-Y de manera análoga:
-$$ \prod_{j = 0  \ j\neq (n/2-i)}^n (x_{n/2} + hi -x_j) =   \prod_{j = 0  \ j\neq (n/2-i)}^n   (  h(i - j+n/2 ))$$
+%Y de manera análoga:
+%$$ \prod_{j = 0  \ j\neq (n/2-i)}^n (x_{n/2} + hi -x_j) =   \prod_{j = 0  \ j\neq (n/2-i)}^n   (  h(i - j+n/2 ))$$
+
+No es dificil comprobar tampoco que :
+$$  x_0 - x_{n/2-i} = x_{n/2+i}-x_n$$
+$$ x_1 - x_{n/2-i} = x_{n/2+i}-x_{n-1}$$
+$$\vdots$$
+$$  x_n - x_{n/2-i} = x_{n/2+i}-x_0$$
+NOTA: tengo que explicar más  esto?\\
+
+Entonces se comprueba que $\prod_{j = 0  \ j\neq n/2-i}^n |\frac{1}{(x_i-x_j)}|=\prod_{j = 0  \ j\neq n/2+i}^n |\frac{1}{(x_i-x_j)}|$. Además, podemos ver que tb son iguales en signo, pues cada uno tendrá tantos nodos positivos como el otro negativos, y al ser $n$ par el productorio es de longitud par. Por todo esto si uno tiene impares negativos el otro tendrá  n-impares negativos, es decir, impares. Como esto se cumple de manera analoga para el caso par, podemos deducir que tienen el mismo signo.
 
 
 \end{itemize}
 
 
-
-
+\textbf{Ejercicio 20.}
 
 \end{document}
