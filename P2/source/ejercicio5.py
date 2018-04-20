@@ -4,7 +4,7 @@ from numpy.polynomial import polynomial as P
 
 
 def intTrapecio( f, a, b, n ):
-     if(n==0):
+     if(n==1):
           resultado = (f(b) + f(a))*(b-a)/2
      else:
           h = (b-a)/n
@@ -13,7 +13,7 @@ def intTrapecio( f, a, b, n ):
 
      return resultado
 
-
+#Deprecated
 def ampliaIntegral( f, a, b, Rk, k):
      index = 2**(k)
      h = (b-a)/(index * 2)
@@ -21,19 +21,16 @@ def ampliaIntegral( f, a, b, Rk, k):
 
      return resultado
 
-
+#Rk = R_{k,j-1} RK1 = R_{k-1,j-1}
 def rombergParcial( Rk, Rk1, j ):
      return Rk + (1/(4**j-1))*(Rk - Rk1)
 
 
 def romberg(f, a, b, n):
      R=[]
-     R.append( intTrapecio( f, a, b, 0 ) )
+     R.append( intTrapecio( f, a, b, 1 ) )
      for i in range(n):
-          R.append( intTrapecio( f, a, b, 2**n ) )
-     #R.append( ampliaIntegral( f, a, b, R[i], i ) )
-     #TODO: ampiaIntegral no funciona, revisar.
-     
+          R.append( intTrapecio( f, a, b, 2**(i+1) ) )
 
      for i in range(n):
           for j in range(n-i):
