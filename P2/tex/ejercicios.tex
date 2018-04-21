@@ -50,7 +50,7 @@ una fórmula de Newton-Cotes. Demuestra que:
 
 \begin{itemize}
 \item Si $n$ es par: $ \alpha_{n/2-i}=\alpha_{n/2+i}$ con $ i = 0,...,\frac{n}{2}$
-\item Si $n$ es par: $ \alpha_{i}=\alpha_{n-i}$ con $ i = 0,...,\frac{n-1}{2}$
+\item Si $n$ es impar: $ \alpha_{i}=\alpha_{n-i}$ con $ i = 0,...,\frac{n-1}{2}$
 \end{itemize}
 
 {Solución.\\}
@@ -73,11 +73,25 @@ $$  x_0 - x_{n/2-i} = x_{n/2+i}-x_n$$
 $$ x_1 - x_{n/2-i} = x_{n/2+i}-x_{n-1}$$
 $$\vdots$$
 $$  x_n - x_{n/2-i} = x_{n/2+i}-x_0$$
-NOTA: tengo que explicar más  esto?\\
 
-Entonces se comprueba que $\prod_{j = 0  \ j\neq n/2-i}^n |\frac{1}{(x_i-x_j)}|=\prod_{j = 0  \ j\neq n/2+i}^n |\frac{1}{(x_i-x_j)}|$. Además, podemos ver que tb son iguales en signo, pues cada uno tendrá tantos nodos positivos como el otro negativos, y al ser $n$ par el productorio es de longitud par. Por todo esto si uno tiene impares negativos el otro tendrá  n-impares negativos, es decir, impares. Como esto se cumple de manera analoga para el caso par, podemos deducir que tienen el mismo signo.
+Entonces se comprueba que $\prod_{j = 0  \ j\neq n/2-i}^n |\frac{1}{(x_i-x_j)}|=\prod_{j = 0  \ j\neq n/2+i}^n |\frac{1}{(x_i-x_j)}|$. Además, podemos ver que tb son iguales en signo, pues cada uno tendrá tantos nodos positivos como el otro negativos, y al ser $n$ par el productorio es de longitud par. Por todo esto si uno tiene impares negativos el otro tendrá  n-impares negativos, es decir, impares. Como esto se cumple de manera analoga para el caso par, podemos deducir que tienen el mismo signo.\\
 
+Consideremos entonces si: $$\int_a^b  \prod_{j = 0  \ j\neq n/2-i}^n (x-x_j)  dx = \int_a^b  \prod_{j = 0  \ j\neq n/2+i}^n (x-x_j)  dx$$
+O de manera equivalente:
+ \begin{equation}
+ \int_a^b (x-x_0)...(x-x_{n/2-i-1}) (x-x_{n/2-i+1}) ... (x-x_n)dx =
+ \end{equation}
 
+ \begin{equation}
+  \int_a^b (x-x_0)...(x-x_{n/2+i-1}) (x-x_{n/2+i+1}) ... (x-x_n)dx 
+\end{equation}
+ 
+ Para solucionar esto haremos un cambio de variable que será la simetría respecto el punto medio en la integral (2) y después usando que $x_i - x_{n/2} = x_{n/2}-x_{n-i}$ : 
+ 
+ $$\int_b^a - (2x_{n/2}-x-x_0) ...(2x_{n/2}-x-x_{n/2+i-1}) (2x_{n/2}-x-x_{n/2+i+1})...(2x_{n/2}-x-x_n) = $$
+ $$\int_a^b (x_n-x)(x_{n-1}-x) ...(x_{n-(n/2+i-1)}-x) (x_{n-(n/2+i+1)}-x)...(x_0-x) = $$
+ $$\int_a^b (x_n-x)(x_{n-1}-x) ...(x_{n/2-i+1}-x) (x_{n/2-i-1)}-x)...(x_0-x)$$
+  Que es (1), considerando igualdad en el signo al haber pares polinomios .
 \end{itemize}
 
 \textbf{Ejercicio 20.}
