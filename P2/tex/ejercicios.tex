@@ -92,6 +92,30 @@ O de manera equivalente:
  $$\int_a^b (x_n-x)(x_{n-1}-x) ...(x_{n-(n/2+i-1)}-x) (x_{n-(n/2+i+1)}-x)...(x_0-x) = $$
  $$\int_a^b (x_n-x)(x_{n-1}-x) ...(x_{n/2-i+1}-x) (x_{n/2-i-1)}-x)...(x_0-x)$$
   Que es (1), considerando igualdad en el signo al haber pares polinomios .
+  
+  \item De manera analoga, comprobamos primero que:
+  $$ x_0  - x_i = x_{n-i} - x_n $$
+  $$ x_1  - x_i = x_{n-i} - x_{n-1} $$
+ $$ \vdots$$
+  $$ x_n  - x_i = x_{n-i} - x_0 $$
+ 
+ Y por lo tanto tenemos el mismo valor absoluto en el denominador de cadas uno de nuestras interpolaciones $l_i$,$l_{n-i}$ pero con signo opuesto.
+ 
+ Entonces tenemos que comprobar que la integrales (3), (4) nos salen iguales en valor absoluto, pero con signo opuesto
+  \begin{equation}
+ \int_a^b (x-x_0)...(x-x_{i-1}) (x-x_{i+1}) ... (x-x_n)dx =
+ \end{equation}
+
+ \begin{equation}
+  \int_a^b (x-x_0)...(x-x_{n-i-1}) (x-x_{n-i+1}) ... (x-x_n)dx 
+\end{equation}
+
+Y realizando en 4 el cambio utilizado anteriormente nos queda:
+
+$$  \int_a^b (x_n-x)...x_{i+1}-x) (x_{i-1}-x) ... (x_0-x)dx $$
+
+Que de manera obvia tendrá el mismo valor absoluto, pero al haber impares factores, signo opuesto.
+
 \end{itemize}
 
 \textbf{Ejercicio 20.}
