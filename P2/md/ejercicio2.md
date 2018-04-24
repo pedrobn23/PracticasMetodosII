@@ -1,18 +1,17 @@
-# -*- coding: utf-8 -*-
-
-"""
-Fórmula de Newton-Cotes
-"""
+```python
 from scipy.integrate import quad
 import numpy as np
 
 def l(x, i, n, nodos):
-    arr = []
+    pol = []
+
     for j in range(i):
-        arr.append((x - nodos[j])/(nodos[i]-nodos[j]))
+        pol.append((x - nodos[j])/(nodos[i]-nodos[j]))
+
     for j in range(i+1, n+1):
-        arr.append((x - nodos[j])/(nodos[i]-nodos[j]))
-    return np.prod(np.array(arr))
+        pol.append((x - nodos[j])/(nodos[i]-nodos[j]))
+
+    return np.prod(np.array(pol))
 
 
 def newton_cotes( f, a, b, n ):
@@ -29,13 +28,9 @@ def newton_cotes( f, a, b, n ):
     for i in range(n+1):
         valores.append(coef[i]*f(nodos[i]))
         
-    return [coef, sum(valores)]
+    return  sum(valores)
 
-
-
-"""
-Programa principal
-"""
+#Datos
 f = lambda x: np.log(x)
 a = 1
 b = 2
@@ -43,4 +38,5 @@ n = 5
 
 result = newton_cotes(f, a,b,n)
    
-print("\nEl valor aproximado es:",result[1])
+print("\nEl valor aproximado es:",result)
+```

@@ -1,3 +1,5 @@
+
+```python
 import scipy as sp
 import numpy as np
 from numpy.polynomial import polynomial as P
@@ -16,15 +18,6 @@ def intTrapecio( f, a, b, n ):
 
      return resultado
 
-
-
-# funcion = input('Introduzca la funcion de la que quiere hallar una raiz en el \
-# intervalo anterior\nf(x) := ')
-# exec('f = lambda x:' + funcion)
-# a=input('Introduce extremo izquierdo del intervalo := ')
-# b=input('Introduce extremo derecho del intervalo := ')
-
-
 f= lambda x: np.log(x) 
 a=1
 b=2
@@ -32,3 +25,4 @@ n=200
 
 resultado = intTrapecio( f, a, b, n )
 print("\nEl valor aproximado es:",resultado)
+```

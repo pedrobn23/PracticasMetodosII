@@ -1,18 +1,17 @@
-# -*- coding: utf-8 -*-
-
-"""
-Fórmula de Newton-Cotes
-"""
+```python
 from scipy.integrate import quad
 import numpy as np
 
 def l(x, i, n, nodos):
-    arr = []
+    pol = []
+
     for j in range(i):
-        arr.append((x - nodos[j])/(nodos[i]-nodos[j]))
+        pol.append((x - nodos[j])/(nodos[i]-nodos[j]))
+
     for j in range(i+1, n+1):
-        arr.append((x - nodos[j])/(nodos[i]-nodos[j]))
-    return np.prod(np.array(arr))
+        pol.append((x - nodos[j])/(nodos[i]-nodos[j]))
+
+    return np.prod(np.array(pol))
 
 
 def newton_cotes( f, a, b, n ):
