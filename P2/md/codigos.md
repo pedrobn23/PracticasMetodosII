@@ -1,13 +1,13 @@
 ---
 title: "Códigos grupo 1"
 author:
-- Pedro Bonilla
-- Johanna Capote
-- Guillermo Galindo
+- Pedro Bonilla Nadal
+- Johanna Capote Robayna
+- Guillermo Galindo Ortuño
 header-includes:
 - \usepackage{fancyhdr}
 - \pagestyle{fancy}
-- \fancyhead[RE, RO]{Método numéricos - Práctica 2}
+- \fancyhead[RE, RO]{Métodos numéricos - Práctica 2}
 
 output: pdf_document
 ---
@@ -36,15 +36,15 @@ def newton_cotes( f, a, b, n ):
     h = (b-a)/n
     for i in range(n+1):
         nodos.append(a + i*h)
-    
+
     coef = []
     for i in range(n+1):
         coef.append(quad(l, a, b, args=(i, n, nodos))[0])
-    
+
     valores = []
     for i in range(n+1):
         valores.append(coef[i]*f(nodos[i]))
-        
+
     return  sum(valores)
 
 #Datos
@@ -83,7 +83,7 @@ def intTrapecio( f, a, b, n ):
 
      return resultado
 
-f= lambda x: np.log(x) 
+f= lambda x: np.log(x)
 a=1
 b=2
 n=200
