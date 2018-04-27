@@ -12,14 +12,6 @@ def intTrapecio( f, a, b, n ):
 
      return resultado
 
-#Not working, DO NOT USE
-def ampliaIntegral( f, a, b, Rk, k):
-     index = 2**(k)
-     h = (b-a)/(index * 2)
-     resultado= Rk/2 + ( sum( [f(a +(2*i+1)*h) for i in range( int(index/2))] ) )
-
-     return resultado
-
 #Rk = R_{k,j-1} RK1 = R_{k-1,j-1}
 def rombergParcial( Rk, Rk1, j ):
      return Rk + (1/(4**j-1))*(Rk - Rk1)
@@ -43,3 +35,4 @@ n=10
 
 resultado = romberg( f, a, b, n )
 print("\nEl valor aproximado es:",resultado)
+print("\nEl valor exacto es:", b*np.log(b)-b - (a*np.log(a)-a))
