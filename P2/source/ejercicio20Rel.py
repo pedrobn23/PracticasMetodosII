@@ -63,19 +63,19 @@ while diff >= 10**(-6):
     cont = cont+1
 
 #Ejercicio grupo Saez
-f = lambda x: 3*x/(x**2 - 4)
-a=1
-b=1.8
-cont = 0
-diff = 1
-
-print("Función x^3*e^(-x)\n")
-while diff >= 10**(-6):
-    Rk = romberg(f, a, b, cont)
-    Rk1 = romberg(f, a, b, cont+1)
-    print("R{0},{0} =".format(cont), Rk )
-    print("R{0},{0} =".format(cont+1), Rk1 )
-    diff = abs(Rk-Rk1)
-    print("|R{0},{0}-R{1},{1}| =".format(cont, cont+1), diff)
-    print("\n")
-    cont = cont+1
+#f = lambda x: 3*x/(x**2 - 4)
+#a=1
+#b=1.8
+#cont = 0
+#diff = 1
+#
+#print("Función x^3*e^(-x)\n")
+#while diff >= 10**(-6):
+#    Rk = romberg(f, a, b, cont)
+#    Rk1 = romberg(f, a, b, cont+1)
+#    print("R{0},{0} =".format(cont), Rk )
+#    print("R{0},{0} =".format(cont+1), Rk1 )
+#    diff = abs(Rk-Rk1)
+#    print("|R{0},{0}-R{1},{1}| =".format(cont, cont+1), diff)
+#    print("\n")
+#    cont = cont+1
