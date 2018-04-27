@@ -89,6 +89,10 @@ O de manera equivalente:
 
  $$\int_b^a - (2x_{n/2}-x-x_0) ...(2x_{n/2}-x-x_{n/2+i-1}) (2x_{n/2}-x-x_{n/2+i+1})...(2x_{n/2}-x-x_n) = $$
  $$\int_b^a - (x_{n/2}-x+x_{n/2}-x_0) ...(x_{n/2}-x+x_{n/2}-x_{n/2+i-1}) (x_{n/2}-x+x_{n/2}-x_{n/2+i+1})...(x_{n/2}-x+x_{n/2}-x_n) = $$
+ Ahora, por estar los puntos uniformemente distribuidos, sabemos que:
+ $$ x_{n/2} - x_{n-i} = x_{0+i} - x_{n/2}$$
+ Por tanto, aplicándolo sobre nuestra integral:
+ $$\int_b^a - (x_{n/2}-x+x_n-x_{n/2}) ...(x_{n/2}-x+x_{n/2-i+1}-x_{n/2}) (x_{n/2}-x+x_{n/2-1-1}-x_{n/2})...(x_{n/2}-x+x_0-x_{n/2}) = $$
  $$\int_a^b (x_n-x)(x_{n-1}-x) ...(x_{n-(n/2+i-1)}-x) (x_{n-(n/2+i+1)}-x)...(x_0-x) = $$
  $$\int_a^b (x_n-x)(x_{n-1}-x) ...(x_{n/2-i+1}-x) (x_{n/2-i-1)}-x)...(x_0-x)$$
   Que es (1), considerando igualdad en el signo al haber pares polinomios .
