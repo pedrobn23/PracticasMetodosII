@@ -26,23 +26,23 @@
 \textbf{a)} $f'(c) \simeq \frac{1}{6h}(-11f(c) + 18f(c + h) -9f(c + 2h) +2f(c+3h))$ \\ \\
 \textbf{solución} \\
 \underline{orden 1:} \\
-$$f(c + h) = f(c) + hf'(c) \ ; \ f(c + 2h) = f(c) + 2hf'(c) \ ; \ f'(c + 3h) = f(c) + 3hf'(c)$$
-$$f'(c) = \frac{1}{6h}(-11f(c) + 18  [f(c) + hf'(c)] - 9  [f(c) + 2hf'(c)] + 2 [f(c) + 3hf'(c)]) = $$
-$$= \frac{1}{6h}(-11f(c) + 18f(c) - 9f(c) + 2f(c) + 18hf'(c) - 18hf'(c) + 6hf'(c)) = $$
+$$f(c + h) = f(c) + hf'(\xi) \ ; \ f(c + 2h) = f(c) + 2hf'(\xi) \ ; \ f'(c + 3h) = f(c) + 3hf'(\xi)$$
+$$f'(c) = \frac{1}{6h}(-11f(c) + 18  [f(c) + hf'(\xi)] - 9  [f(c) + 2hf'(\xi)] + 2 [f(c) + 3hf'(\xi)]) = $$
+$$= \frac{1}{6h}(-11f(c) + 18f(c) - 9f(c) + 2f(c) + 18hf'(\xi) - 18hf'(\xi) + 6hf'(\xi)) = $$
 $$= \frac{1}{6h}(6hf'(c)) = f'(c) $$
 \underline{orden 2:} \\
-$$ f(c + h) = f(c) + hf'(c) + \frac{h^{2}}{2!} f''(c)$$ $$ f(c + 2h) = f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(c)$$ $$f'(c + 3h) = f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(c) $$
-$$f'(c) = \frac{1}{6h}(-11f(c) + 18  [f(c) + hf'(c) + \frac{h^{2}}{2!} f''(c)] - 9  [f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(c)] +$$ $$ + 2 [f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(c)]) = \frac{1}{6h}(6hf'(c) + f''(c)[\frac{18h^{2}}{4} - 9h^{2} + \frac{18h^{2}}{4}]) = $$ $$\frac{1}{6h}(6hf'(c) + f''(c)(\frac{18h^{2}}{2} + 9h^{2})) = f'(c)$$
+$$ f(c + h) = f(c) + hf'(c) + \frac{h^{2}}{2!} f''(\xi)$$ $$ f(c + 2h) = f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(\xi)$$ $$f'(c + 3h) = f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(\xi) $$
+$$f'(c) = \frac{1}{6h}(-11f(c) + 18  [f(c) + hf'(c) + \frac{h^{2}}{2!} f''(\xi)] - 9  [f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(\xi)] +$$ $$ + 2 [f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(\xi)]) = \frac{1}{6h}(6hf'(c) + f''(\xi)[\frac{18h^{2}}{4} - 9h^{2} + \frac{18h^{2}}{4}]) = $$ $$\frac{1}{6h}(6hf'(c) + f''(\xi)(\frac{18h^{2}}{2} + 9h^{2})) = f'(c)$$
 \underline{orden 3:} \\
-$$ f(c + h) = f(c) + hf'(c) + \frac{h^{2}}{2!} f''(c) + \frac{h^{3}}{3!}f'''(c)$$
-$$ f(c + 2h) = f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(c) + \frac{8h^{3}}{3!}f'''(c)$$ 
-$$f'(c + 3h) = f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(c) + \frac{27h^{3}}{3!}f'''(c)$$
-$f'(c) = \frac{1}{6h}(6hf'(c) + f'''(c)[\frac{18h^{3}}{3!} - \frac{72h^{3}}{3!} + \frac{54h^{3}}{3!}]) =  \frac{1}{6h}(6hf'(c) + f'''(c)[3h^{3} - 12h^{3} + 9h^{3}]) = f'(c)  $ \\
+$$ f(c + h) = f(c) + hf'(c) + \frac{h^{2}}{2!} f''(c) + \frac{h^{3}}{3!}f'''(\xi)$$
+$$ f(c + 2h) = f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(c) + \frac{8h^{3}}{3!}f'''(\xi)$$ 
+$$f'(c + 3h) = f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(c) + \frac{27h^{3}}{3!}f'''(\xi)$$
+$f'(c) = \frac{1}{6h}(6hf'(c) + f'''(\xi)[\frac{18h^{3}}{3!} - \frac{72h^{3}}{3!} + \frac{54h^{3}}{3!}]) =  \frac{1}{6h}(6hf'(c) + f'''(\xi)[3h^{3} - 12h^{3} + 9h^{3}]) = f'(c)  $ \\
 \underline{orden 4:} \\
-$$ f(c + h) = f(c) + hf'(c) + \frac{h^{2}}{2!} f''(c) + \frac{h^{3}}{3!}f'''(c) + \frac{h^{4}}{4!}f^{v}(c)$$
-$$ f(c + 2h) = f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(c) + \frac{8h^{3}}{3!}f'''(c) + \frac{16h^{4}}{4!}f^{v}(c)$$ 
-$$f'(c + 3h) = f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(c) + \frac{27h^{3}}{3!}f'''(c) + \frac{81h^{4}}{4!}f^{v}(c)$$
-$f'(c) = \frac{1}{6h}(6hf'(c) + f^{v}(c)[\frac{18h^{4}}{4!} - \frac{144h^{4}}{4!} + \frac{162h^{4}}{4!}]) = \frac{1}{6h}(6hf'(c) + f^{v}(c)\frac{36h^{4}}{24}) \neq f'(c) $ \\
+$$ f(c + h) = f(c) + hf'(c) + \frac{h^{2}}{2!} f''(c) + \frac{h^{3}}{3!}f'''(c) + \frac{h^{4}}{4!}f^{v}(\xi)$$
+$$ f(c + 2h) = f(c) + 2hf'(c) + \frac{4h^{2}}{2!} f''(c) + \frac{8h^{3}}{3!}f'''(c) + \frac{16h^{4}}{4!}f^{v}(\xi)$$ 
+$$f'(c + 3h) = f(c) + 3hf'(c) + \frac{9h^{2}}{2!} f''(c) + \frac{27h^{3}}{3!}f'''(c) + \frac{81h^{4}}{4!}f^{v}(\xi)$$
+$f'(c) = \frac{1}{6h}(6hf'(c) + f^{v}(\xi)[\frac{18h^{4}}{4!} - \frac{144h^{4}}{4!} + \frac{162h^{4}}{4!}]) = \frac{1}{6h}(6hf'(c) + f^{v}(\xi)\frac{36h^{4}}{24}) \neq f'(c) $ \\
 
 
 \textbf{Ejercicio 13.} Sea $$ \int_a^b f(x) dx \simeq \sum_{i=0}^n \alpha_i f(x_i),  $$
