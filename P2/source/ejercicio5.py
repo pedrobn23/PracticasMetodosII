@@ -17,22 +17,23 @@ def rombergParcial( Rk, Rk1, j ):
      return Rk + (1/(4**j-1))*(Rk - Rk1)
 
 def romberg(f, a, b, k):
-     R=[]
-     R.append( intTrapecio( f, a, b, 1 ) )
-     for i in range(k):
-          R.append( intTrapecio( f, a, b, 2**(i+1) ) )
+      R=[]
+      R.append( intTrapecio( f, a, b, 1 ) )
+      for i in range(k):
+           R.append( intTrapecio( f, a, b, 2**(i+1) ) )
 
-     for i in range(k):
-          for j in range(k-i):
-               R[j]=rombergParcial( R[j+1], R[j], j+1 )
+      for i in range(k):
+           for j in range(k-i):
+               R[j]=rombergParcial( R[j+1], R[j], i+1 )
 
-     return R[0]
+      return R[0]
+
+#def romberg(f, a, b, k):
 
 f = lambda x: np.log(x)
 a=1
 b=2
 n=10
 
-resultado = romberg( f, a, b, n )
+resultado = romberg( f, a, b, 10 )
 print("\nEl valor aproximado es:",resultado)
-print("\nEl valor exacto es:", b*np.log(b)-b - (a*np.log(a)-a))
