@@ -6,7 +6,7 @@ def intTrapecio( f, a, b, n ):
      if(n==1):
           resultado = (f(b) + f(a))*(b-a)/2
      else:
-          h = (b-a)/n
+          oh = (b-a)/n
           x=[ a+h*i for i in range(n+1)]
           resultado = ( h *( ( f(x[0]) + f(x[n]) )/2 + sum([f(x[i+1]) for i in range(n-1)]) ) )
 
