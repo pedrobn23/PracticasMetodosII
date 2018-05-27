@@ -1,6 +1,7 @@
 from scipy.integrate import quad
 import numpy as np
 import math as mth
+from scipy import optimize
 
 """
 Datos de entrada
@@ -73,30 +74,37 @@ def adamsMoulton(a, b, k, j, f, u):
     h = (b-a) / n
     t = [a + j*h for j in range(n+1)]
 
-    # Coeficientes b_j
+    # Coeficientes b (b[0] = b_-1,  ..., b[k] = b_k-1
     b = []
 
     for i in range(-1,k):
-        b[i] = (-1)**(i+1)/(mth.factorial(i+1)*mth.factorial(k-i-1)) * quad(func, 0, 1, args=(i,) )[0]
+        b.append( (-1)**(i+1)/(mth.factorial(i+1)*mth.factorial(k-i-1)) * quad(func, 0, 1, args=(i,) )[0] )
 
-    sumatory = sum ( b[i]*f(t[j-i],u[j-i]) for i in range(0, k) )
+    sumatory = 0
+    for i in range (0,k):
+        sumatory = sumatory + b[i+1]*f(t[j-i],u[j-i])
 
     # Función que define a la ecuación implícita (si g(x) = 0 -> x = u_j+1)
-    g = lambda x: x - u[j] - h*(sumatory + b[-1]*f(t[j+1], x))
+    g = lambda x: x - u[j] - h*(sumatory + b[0]*f(t[j+1], x))
 
+    a = 1e-7
     # Derivada de g aproximada
-    dg = lambda x: (g(x+h) - g(x))/(2.0*1e-7)
+    dg = lambda x: (g(x+a) - g(x-a))/(2.0*a)
 
-    u_k = optimize.newton(g, u[k-1], dg)
-    return u_k
+    # u_j+1
+    u_j1 = optimize.newton(g, u[j], dg)
+    return u_j1
 
 '''
 Programa principal
 '''
 
-u = eulerMejorado(a, b, k, f, y0)
+valores_euler = eulerMejorado(a, b, n, f, y0)
+u = []
+for j in range(k):
+    u.append(valores_euler[j])
 
-for j in range(k, n+1) :
+for j in range(k-1, n) :
     u.append(adamsMoulton(a, b, k, j, f, u))
 
 print("\El resultado es: ", u)
