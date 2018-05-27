@@ -42,10 +42,6 @@ t = [a + j*h for j in range(n+1)]
 '''
 Método de Euler
 '''
-# Intervalo (a,b)
-# n número de nodos
-# f f(t, y(t)) = y'
-# y0 valor de y en t_0
 def euler():
     u = []
     for j in range(n+1):
@@ -61,7 +57,7 @@ print("\nEl valor aproximado es:",result)
 ```
 
  
-# Ejercicio 3
+# Programa 3
 
 ```python
 """
@@ -90,11 +86,6 @@ t = [a + j*h for j in range(n+1)]
 '''
 Método de Euler Mejorado
 '''
-# Intervalo (a,b)
-# n número de nodos
-# f f(t, y(t)) = y'
-# y0 valor de y en t_0
-
 def eulerMejorado():
     u = []
     for j in range(n+1):
@@ -115,7 +106,7 @@ print("\nEl valor aproximado es:",result)
 ```
 
  
-# Ejercicio 5
+# Programa 5
 
 ```python
 """
@@ -144,11 +135,6 @@ t = [a + j*h for j in range(n+1)]
 '''
 Método de Runge Kutta
 '''
-# Intervalo (a,b)
-# n número de nodos
-# f f(t, y(t)) = y'
-# y0 valor de y en t_0
-
 def rungeKutta():
     u = []
     for j in range(n+1):
@@ -170,7 +156,8 @@ print("\nEl valor aproximado es:",result)
 ```
 
  
-# Ejercicio 9
+# Programa 9
+
 ```python
 from scipy.integrate import quad
 import numpy as np
@@ -251,7 +238,8 @@ def adamsMoulton(a, b, k, j, f, u):
     b = []
 
     for i in range(-1,k):
-        b[i] = (-1)**(i+1)/(mth.factorial(i+1)*mth.factorial(k-i-1)) * quad(func, 0, 1, args=(i,) )[0]
+        b[i] = (-1)**(i+1)/(mth.factorial(i+1) * mth.factorial(k-i-1))*
+               quad(func, 0, 1, args=(i,) )[0]
 
     sumatory = sum ( b[i]*f(t[j-i],u[j-i]) for i in range(0, k) )
 
