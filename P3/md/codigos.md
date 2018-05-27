@@ -60,7 +60,7 @@ result = euler()
 print("\nEl valor aproximado es:",result)
 ```
 
-\newpage
+ 
 # Ejercicio 3
 
 ```python
@@ -114,7 +114,7 @@ print("\nEl valor aproximado es:",result)
 
 ```
 
-\newpage
+ 
 # Ejercicio 5
 
 ```python
@@ -169,7 +169,7 @@ print("\nEl valor aproximado es:",result)
 
 ```
 
-\newpage
+ 
 # Ejercicio 9
 ```python
 from scipy.integrate import quad
