@@ -24,7 +24,7 @@ h = 0.2
 t = [a + j*h for j in range(n+1)]
 
 # Función exacta
-f_exacta = lambda t: t**2 + 2*t + math.exp(t) + 2
+f_exacta = lambda t: t*t + 2*t + math.exp(t) + 2.0
 
 # error
 error = []
@@ -48,7 +48,7 @@ def eulerMejorado(err):
             u.append(
                 u[j-1]+
                 h*f( t[j-1] + h/2,
-                     u[j-1] + h*f(t[j-1],u[j-1]) )
+                     u[j-1] + h/2*f(t[j-1],u[j-1]) )
             )
 
             err.append( math.fabs(u[j] - f_exacta(t[j])))
