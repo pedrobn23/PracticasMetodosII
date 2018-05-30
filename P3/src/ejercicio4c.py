@@ -48,7 +48,7 @@ def eulerMejorado(err):
             u.append(
                 u[j-1]+
                 h*f( t[j-1] + h/2,
-                     u[j-1] + h*f(t[j-1],u[j-1]) )
+                     u[j-1] + h/2*f(t[j-1],u[j-1]) )
             )
 
             err.append( math.fabs(u[j] - f_exacta(t[j])))
