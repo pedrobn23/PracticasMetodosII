@@ -101,10 +101,10 @@ Programa principal
 h = (b-a) / n
 t = [a + j*h for j in range(n+1)]
 
-valores_euler = eulerMejorado(a, b, n, f, y0)
+# valores_euler = eulerMejorado(a, b, n, f, y0)
 u = []
 for j in range(k):
-    u.append(valores_euler[j])
+    u.append(y(t[j]))
 
 for j in range(k-1, n) :
     u.append(adamsMoulton(a, b, k, j, f, u))
