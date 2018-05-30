@@ -9,24 +9,24 @@ Datos de entrada
 
 # Intervalo [a,b]
 a = 0.0
-b = 1.0
+b = 2.0
 
 # Número de divisiones del intervalo
 n = 10
 
 # Número de pasos
-k = 3
+k = 4
 
 # Valor inicial y0 = y(a)
-y0 = 1
+y0 = 0.5
 
 # Función f de dos variables
 def f(t, y):
-    return -y + t + 1.0
+    return y - t**2 + 1.0
 
 # Función y solución exacta (si existe)
 def y(t):
-    return exp(-t) + t
+    return (t+1)**2 -0.5*np.exp(t)
 
 '''
 Método de Euler
@@ -98,6 +98,8 @@ def adamsMoulton(a, b, k, j, f, u):
 '''
 Programa principal
 '''
+h = (b-a) / n
+t = [a + j*h for j in range(n+1)]
 
 valores_euler = eulerMejorado(a, b, n, f, y0)
 u = []
@@ -107,4 +109,19 @@ for j in range(k):
 for j in range(k-1, n) :
     u.append(adamsMoulton(a, b, k, j, f, u))
 
-print("\El resultado es: ", u)
+print("Datos del problema: ")
+print(" * Problema:")
+print("     - y'(t) = y(t) - t^2 +1")
+print("     - y(0) = ", y0)
+print(" * Intervalo: (", a, ", ", b, ")" )
+print(" * Numero de subintervalos: ", n)
+print(" * Número de pasos: ", k)
+print(" * Solución exacta: y(t) = (t + 1)^2 - 0.5 e^t")
+print("Resultados: ")
+
+for j in range(n+1):
+    print("------")
+    print("Punto: ", t[j])
+    print("Aproximación: ", u[j])
+    print("Valor exacto: ", y(t[j]) )
+    print("Error: ", abs(y(t[j]) - u[j]))
