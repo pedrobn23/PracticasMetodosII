@@ -48,7 +48,7 @@ def eulerMejorado(a, b, n, f, y0):
             u.append(
                 u[j-1]+
                 h*f( t[j-1] + h/2,
-                     u[j-1] + h*f(t[j-1],u[j-1]) )
+                     u[j-1] + h/2*f(t[j-1],u[j-1]) )
             )
     return u
 
