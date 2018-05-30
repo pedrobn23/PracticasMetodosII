@@ -24,7 +24,7 @@ h = 0.2
 t = [a + j*h for j in range(n+1)]
 
 # Función exacta
-f_exacta = lambda t: t**2 + 2*t + math.exp(t) + 2
+f_exacta = lambda t: t*t + 2*t + math.exp(t) + 2.0
 
 # error
 error = []
